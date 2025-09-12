@@ -1,0 +1,89 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "productName": "Smart-Memo",
+  "version": "0.1.0",
+  "identifier": "com.kochu.ai",
+  "build": {
+    "frontendDist": "../out",
+    "devUrl": "http://localhost:3000",
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Smart-Memo",
+        "width": 800,
+        "height": 600,
+        "resizable": true,
+        "fullscreen": false,
+        "visible": true,
+        "center": true,
+        "devtools": true
+      },
+      {
+        "label": "helper",
+        "title": "Smart Memo Helper",
+        "url": "/helper",
+        "transparent": true,
+        "decorations": false,
+        "alwaysOnTop": true,
+        "fullscreen": false,
+        "resizable": true,
+        "minWidth": 120,
+        "minHeight": 40,
+        "maxWidth": 600,
+        "maxHeight": 120,
+        "width": 140,
+        "height": 45,
+        "shadow": false,
+        "skipTaskbar": true,
+        "visible": false,
+        "center": true,
+        "acceptFirstMouse": true,
+        "tabbingIdentifier": "smart-memo-helper",
+        "devtools": true
+      }
+    ],
+    "security": {
+      "csp": null,
+      "capabilities": [
+        {
+          "identifier": "main-capability",
+          "windows": [
+            "helper",
+            "main"
+          ],
+          "permissions": [
+            "core:window:default",
+            "core:window:allow-start-dragging",
+            "core:window:allow-set-size",
+            "core:window:allow-set-position",
+            "core:event:default",
+            "core:event:allow-listen",
+            "core:event:allow-emit",
+            "shell:allow-open"
+          ]
+        }
+      ]
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "resources": [],
+    "externalBin": [],
+    "copyright": "",
+    "category": "DeveloperTool",
+    "shortDescription": "Smart voice memo app with AI transcription",
+    "longDescription": "A smart voice memo application that uses AI to transcribe, translate, and summarize your voice recordings."
+  }
+}

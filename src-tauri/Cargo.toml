@@ -1,0 +1,45 @@
+[package]
+name = "app"
+version = "0.1.0"
+description = "A Tauri App"
+authors = ["you"]
+license = ""
+repository = ""
+edition = "2021"
+rust-version = "1.77.2"
+
+[lib]
+name = "app_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.3.0", features = [] }
+
+[dependencies]
+# Core functionality
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+log = "0.4"
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1.0", features = ["v4", "serde"] }
+sqlx = { version = "0.7", features = [ "runtime-tokio-rustls", "postgres", "macros", "chrono", "uuid" ] }
+
+
+# Async and HTTP
+tokio = { version = "1.0", features = ["full"] }
+reqwest = { version = "0.12", features = ["json"] }
+async-trait = "0.1"
+
+# Data encoding, MIME handling
+base64 = "0.21"
+mime = "0.3"
+mime_guess = "2.0"
+
+
+
+# Tauri (desktop app) - Minimal setup to get running
+tauri = { version = "2.6.2", features = [] }
+tauri-plugin-log = "2.0"
+tauri-plugin-shell = "2.0"
+# Temporarily comment out until API is stable
+# tauri-plugin-global-shortcut = "2.0"

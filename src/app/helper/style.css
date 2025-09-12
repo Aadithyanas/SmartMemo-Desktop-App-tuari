@@ -1,0 +1,25 @@
+body {
+    background: none;
+ box-shadow: none;
+ border: none;
+  overflow: hidden; 
+}
+
+/* Prevent text selection */
+.select-none {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Smooth transitions for all elements */
+* {
+  transition-property: transform, background-color, opacity, scale;
+  transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+/* Custom iPhone-like easing */
+.ease-ios {
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}

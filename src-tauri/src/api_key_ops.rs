@@ -3,7 +3,7 @@ use serde::Deserialize;
 use serde_json::json;
 use std::error::Error;
 
-const API_BASE_URL: &str = "http://localhost:4000/api";
+const API_BASE_URL: &str = "https://smartmemo-backend-rust.onrender.com/api";
 
 #[derive(Deserialize)]
 struct ApiKeyResponse {

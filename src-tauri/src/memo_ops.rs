@@ -3,7 +3,7 @@ use reqwest::Client;
 use serde::{Deserialize, Serialize};
 use tauri::AppHandle;
 
-const API_BASE_URL: &str = "http://localhost:4000/api";
+const API_BASE_URL: &str = "https://smartmemo-backend-rust.onrender.com/api";
 
 // This struct should match the `MemoOutput` from your backend API
 // It's used to deserialize the responses from GET requests.
